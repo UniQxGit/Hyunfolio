@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hyunfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/Parallax.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style type="text/css">
+        #overlay {
+
+        }
+
+        #bannerImg {
+            margin-left: 10px;
+        }
+
+        #banner {
+            
+            background-position: center;
+        }
+
+        #banner2 {
+            background-color: black;
+        }
+
+        #group1 {
+            z-index: 0;
+        }
+
+        #group2 {
+            z-index: 1;
+            background-color: black;
+        }
+
+       /* .parallax__group {
+            transform: translate3d(700px, 0, -800px) rotateY(30deg);
+        }*/
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+    </div>
+    <div class="parallax">
+        <div id="group1" class="parallax__group">
+            <div class="parallax__layer parallax__layer--back bannerBG">
+                <img id="bannerImg" src="Assets/indexBG.png">
+            </div>
+            <div id="banner" class="parallax__layer parallax__layer--base">
+                <div class="bannerContainer">
+                    <div class="header">
+                        <img src="Assets/Logo.png">
+                    </div>
+                
+                <div class="bannerMid">
+                    <img src="Assets/Opening_banner_resume_1.png">
+                    <img src="Assets/Opening_banner_projects_1.png">
+                    <img src="Assets/Opening_banner_blog_1.png">
+                    <img src="Assets/Opening_banner_youtube_1.png">
+                </div>
+                <div class="footer">
+                    <img src="Assets/button_aboutme.png">
+                </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="group2" class="parallax__group">
+            <div class="parallax__layer parallax__layer--back"></div>
+            <div id="banner2" class="parallax__layer parallax__layer--base">
+                <div class="bannerMid">
+                    <img src="Assets/Opening_banner_resume_1.png">
+                    <img src="Assets/Opening_banner_projects_1.png">
+                    <img src="Assets/Opening_banner_blog_1.png">
+                    <img src="Assets/Opening_banner_youtube_1.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

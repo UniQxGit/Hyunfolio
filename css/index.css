@@ -1,0 +1,45 @@
+.bannerContainer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+}
+
+.bannerBG {
+	padding: 0;
+	margin: 0;
+	/*background-image: url("../Assets/indexBG.png");*/
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-height: 1920px;
+}
+
+.header {
+	height: 110px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.footer {
+	width: 100%;
+	height: 30%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	margin-top: 0px;
+	background-color: black;
+}
+
+.bannerMid {
+	display: flex;
+	flex: 0 1 200px;
+	background-image: url("../Assets/indexOpeningOverlay.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: 0px;
+}
