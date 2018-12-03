@@ -7,77 +7,148 @@
     <link rel="stylesheet" type="text/css" href="css/Parallax.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <style type="text/css">
-        #overlay {
 
+      .debug {
+    position: fixed;
+    top: 0;
+    left: .5em;
+    z-index: 999;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    padding: .5em;
+    border-radius: 0 0 5px 5px;
+  }
+  .debug-on .parallax__group {
+    -webkit-transform: translate3d(800px, 0, -300px) rotateY(20deg);
+    transform: translate3d(700px, 0, -400px) rotateY(10deg);
+ }
+  .debug-on .parallax__layer {
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0.9;
+  }
+
+        #logo {
+            margin-left: 2em;
         }
 
-        #bannerImg {
-            margin-left: 10px;
+        #aboutme {
+            justify-content: flex-end;
+            align-items: flex-end;
         }
 
-        #banner {
-            
-            background-position: center;
-        }
-
-        #banner2 {
-            background-color: black;
+        #aboutme_banner{
+            margin: auto;
+            display: flex;
+            background-color: #000;
         }
 
         #group1 {
-            z-index: 0;
+            z-index: 1;
+            background-color: yellow;
+        }
+
+        #group1 .parallax__layer--back {
+            background: rgb(102,204,102);
         }
 
         #group2 {
-            z-index: 1;
-            background-color: black;
+            background-color: red;
+            z-index: 0;
         }
 
-       /* .parallax__group {
-            transform: translate3d(700px, 0, -800px) rotateY(30deg);
-        }*/
+        #group2 .parallax__layer--back {
+            
+        }
+
+
+        #group3 {
+            
+            /*background-color: red;*/
+        }
+
+        #aboutme_banner {/*
+            margin-top: 50%;
+            height: 50%;*/
+        }
+
+        #group3 .parallax__layer--back {
+            z-index: 0;
+            /*background: rgb(184,223,101);*/
+        }
+
+        #group4 {
+            z-index: 4;
+            background-image: url("Assets/MainBG.png");
+            background-position: center;
+            /*margin-top: -98%;*/
+        }
+
+        .parallax__group {
+            /*transform: translate3d(600px, 0, -400px) rotateY(20deg);*/
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        
+    <div class="debug">
+        <label><input type="checkbox"> Debug</label>
     </div>
+    
     <div class="parallax">
         <div id="group1" class="parallax__group">
+            <div class="parallax__layer parallax__layer--base">
+                <!-- <div class="bannerContainer">
+                    <div class="header">
+                        <img id="logo" src="Assets/Logo.png">
+                    </div>
+                    <div class="spaceFiller"></div>
+                    <div class="bannerMid">
+                        <div class="spaceFiller"></div>
+                        <img src="Assets/Opening_banner_resume_1.png">
+                        <img src="Assets/Opening_banner_projects_1.png">
+                        <img src="Assets/Opening_banner_blog_1.png">
+                        <img src="Assets/Opening_banner_youtube_1.png">
+                        <div class="spaceFiller"></div>
+                    </div>
+                    <div class="spaceFiller"></div>
+                    <div class="footer">
+                        <img src="Assets/button_aboutme.png">
+                    </div>
+                </div> -->
+            </div>  
+        </div>
+
+        <div id="group2" class="parallax__group">
             <div class="parallax__layer parallax__layer--back bannerBG">
                 <img id="bannerImg" src="Assets/indexBG.png">
             </div>
-            <div id="banner" class="parallax__layer parallax__layer--base">
-                <div class="bannerContainer">
-                    <div class="header">
-                        <img src="Assets/Logo.png">
-                    </div>
-                
-                <div class="bannerMid">
-                    <img src="Assets/Opening_banner_resume_1.png">
-                    <img src="Assets/Opening_banner_projects_1.png">
-                    <img src="Assets/Opening_banner_blog_1.png">
-                    <img src="Assets/Opening_banner_youtube_1.png">
-                </div>
-                <div class="footer">
-                    <img src="Assets/button_aboutme.png">
-                </div>
-                </div>
+        </div>
+
+        <div id="group3" class="parallax__group">
+            <div class="parallax__layer parallax__layer--back bannerBG">
+                <img id="aboutme_banner" src="Assets/MainBG_back.png">
+            </div>
+        </div>
+
+        <div id="group4" class="parallax__group">
+            <div id="aboutme" class="parallax__layer parallax__layer--base">
                 
             </div>
         </div>
 
-        <div id="group2" class="parallax__group">
-            <div class="parallax__layer parallax__layer--back"></div>
-            <div id="banner2" class="parallax__layer parallax__layer--base">
-                <div class="bannerMid">
-                    <img src="Assets/Opening_banner_resume_1.png">
-                    <img src="Assets/Opening_banner_projects_1.png">
-                    <img src="Assets/Opening_banner_blog_1.png">
-                    <img src="Assets/Opening_banner_youtube_1.png">
-                </div>
-            </div>
-        </div>
-    </div>
+        
+        <script async="" src="A%20grouped%20pure%20CSS%20parallax%20demo%20by%20Keith%20Clark_files/analytics.js"></script><script>
+    var debugInput = document.querySelector("input");
+    function updateDebugState() {
+        document.body.classList.toggle('debug-on', debugInput.checked);
+    }
+    debugInput.addEventListener("click", updateDebugState);
+    updateDebugState();
+        </script>
+        
 </body>
 </html>
+
+
+<!-- 
+<a href="https://www.freepik.com/free-vector/modern-red-geometric-background_1171835.htm">Designed by Harryarts</a>
+ -->

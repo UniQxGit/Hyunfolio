@@ -1,8 +1,8 @@
 .bannerContainer {
 	height: 100%;
+	width:100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 	flex-shrink: 1;
 }
@@ -20,16 +20,18 @@
 }
 
 .header {
-	height: 110px;
-	justify-content: flex-end;
+	height: 130%;
+	display: flex;
+	justify-content: flex-start;
 	align-items: center;
+	background-color: black;
 }
 
 .footer {
 	width: 100%;
-	height: 30%;
+	height: 120%;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: center;
 	margin-top: 0px;
 	background-color: black;
@@ -37,9 +39,16 @@
 
 .bannerMid {
 	display: flex;
-	flex: 0 1 200px;
-	background-image: url("../Assets/indexOpeningOverlay.png");
-	background-repeat: no-repeat;
 	background-position: center;
-	min-width: 0px;
+}
+
+.spaceFiller {
+	height: 100%;
+	background-color: black;
+	flex-grow: 2;
+}
+
+.aboutMeBanner {
+	display: flex;
+	margin-left: 17px;
 }
