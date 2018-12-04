@@ -6,6 +6,20 @@
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/Parallax.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/progressbars.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<!--     <script>
+        $(function() {
+            $(".meter > span").each(function() {
+                $(this)
+                    .data("origWidth", $(this).width())
+                    .width(0)
+                    .animate({
+                        width: $(this).data("origWidth")
+                    }, 1200);
+            });
+        });
+    </script> -->
     <style type="text/css">
 
       .debug {
@@ -26,66 +40,99 @@
     box-shadow: 0 0 0 2px #000;
     opacity: 0.9;
   }
+        #bannerImg {
+            position: absolute;
+        }
 
         #logo {
-            margin-left: 2em;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #aboutme {
+            background-image: url("Assets/MainBG.png");
+            background-position: center;
             justify-content: flex-end;
             align-items: flex-end;
+            background-size: contain;
+        }
+
+        #aboutme_BG {
+            background-image: url("Assets/MainBG_back.png");
+            /*background-color: #840909;*/
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         #aboutme_banner{
             margin: auto;
             display: flex;
-            background-color: #000;
+            background-color: #840909;
+        }
+
+        #SkillSet1 {
+            width: 500px;
+            margin-top: 50px;
+            background-color: rgba(178,0,0,.3);
+        }
+
+        #SkillSet2 {
+            width: 80%;
+            margin-top: 100px;
+            background-color: rgba(0,0,0,.3);
+        }
+
+        #SkillsDistribution {
+            width: 80%;
+            /*height: 100%;*/
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+        }
+
+        #SkillProgressTitle {
+            width: 300px;
+            margin-right: 10px;
         }
 
         #group1 {
-            z-index: 1;
-            background-color: yellow;
-        }
-
-        #group1 .parallax__layer--back {
-            background: rgb(102,204,102);
+            z-index: 3;
+            /*background-color: yellow;*/
         }
 
         #group2 {
-            background-color: red;
-            z-index: 0;
-        }
-
-        #group2 .parallax__layer--back {
-            
+            /*background-color: red;*/
+            z-index: 2;
         }
 
 
         #group3 {
-            
+            z-index: 0;
+            margin-top: 40vh;
             /*background-color: red;*/
         }
 
-        #aboutme_banner {/*
-            margin-top: 50%;
-            height: 50%;*/
-        }
-
         #group3 .parallax__layer--back {
-            z-index: 0;
-            /*background: rgb(184,223,101);*/
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         #group4 {
-            z-index: 4;
-            background-image: url("Assets/MainBG.png");
-            background-position: center;
+            z-index: 1;
+            /*background-color: red;*/
+            /*background-image: url("Assets/img4.png");*/
             /*margin-top: -98%;*/
         }
 
-        .parallax__group {
-            /*transform: translate3d(600px, 0, -400px) rotateY(20deg);*/
+        #group5 {
+            z-index: 5;
+            background-color: red;
+            height: 50vh;
         }
+
+
     </style>
 </head>
 <body>
@@ -93,14 +140,31 @@
         <label><input type="checkbox"> Debug</label>
     </div>
     
+<!--     <div class="bannerBG">
+        <img src="Assets/indexBG.png">
+    </div>  -->
+
+    <div class="navigation">
+        <div class="flexEmpty" style="flex-grow: 1"></div>
+        <img src="Assets/Nav_Home.png">
+        <img src="Assets/Nav_Resume.png">
+        <img src="Assets/Nav_Projects.png">
+        <img src="Assets/Nav_Blog.png">
+        <img src="Assets/Nav_Youtube.png">
+        <div class="flexEmpty" style="flex-grow: 1"></div>
+
+    </div>
+
     <div class="parallax">
         <div id="group1" class="parallax__group">
             <div class="parallax__layer parallax__layer--base">
-                <!-- <div class="bannerContainer">
+                <div class="bannerContainer">
                     <div class="header">
                         <img id="logo" src="Assets/Logo.png">
                     </div>
+
                     <div class="spaceFiller"></div>
+
                     <div class="bannerMid">
                         <div class="spaceFiller"></div>
                         <img src="Assets/Opening_banner_resume_1.png">
@@ -109,33 +173,249 @@
                         <img src="Assets/Opening_banner_youtube_1.png">
                         <div class="spaceFiller"></div>
                     </div>
+
                     <div class="spaceFiller"></div>
+
                     <div class="footer">
                         <img src="Assets/button_aboutme.png">
                     </div>
-                </div> -->
+
+                </div>
             </div>  
+            <div class="parallax__layer parallax__layer--back bannerBG">
+                <img src="Assets/indexBG.png">
+            </div>
         </div>
 
         <div id="group2" class="parallax__group">
             <div class="parallax__layer parallax__layer--back bannerBG">
-                <img id="bannerImg" src="Assets/indexBG.png">
+                <img src="Assets/img4.png">
             </div>
-        </div>
-
-        <div id="group3" class="parallax__group">
-            <div class="parallax__layer parallax__layer--back bannerBG">
-                <img id="aboutme_banner" src="Assets/MainBG_back.png">
+            <div id="aboutme_BG" class="parallax__layer parallax__layer--base">
+                <div class="wrapper">
+                    <div class="content whoAmI">
+                        <h1>WHO AM I?</h1>
+                        <p>
+                            I am a Gameplay programmer currently working with <br> 
+                            Zemple Games to create mobile games. I've been <br>
+                            passionate about games and gaming my whole life, <br> 
+                            and have always enjoyed expressing my creativity <br>
+                            in any way that I can. 
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div id="group4" class="parallax__group">
-            <div id="aboutme" class="parallax__layer parallax__layer--base">
+            <div id="aboutme" class="parallax__layer parallax__layer--fore">
                 
             </div>
         </div>
 
-        
+        <div id="group4" class="parallax__group">
+            <div class="parallax__layer parallax__layer--back bannerBG">
+                <img src="Assets/img6.png">
+            </div>
+            <div class="parallax__layer parallax__layer--base bannerBG" >
+
+                <div id="SkillsDistribution">
+                    <h1 style="margin-bottom: 00px;">Experience Levels: </h1>
+                    <p>What should you hire me for?</p>
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>Gameplay Programming:</h2>
+                        </div>
+                        <div class="meter green content" style="width: 60%; border: 5px solid #424242;">
+                            <span style="width: 90%"><span>90%</span></span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow:1"></div>
+                    </div>
+                    
+
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>Multiplayer Backend: </h2>
+                        </div>
+                        
+                        <div class="meter yellow content" style="width: 60%; border: 5px solid #424242;">
+
+                            <span style="width: 60%; text-align: center;"><span></span>60%</span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>Database Backend: </h2>
+                        </div>
+                        
+                        <div class="meter blue content" style="width: 60%; border: 5px solid #424242;">
+
+                            <span style="width: 40%; text-align: center;"><span></span>35%</span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>Level Design: </h2>
+                        </div>
+                        
+                        <div class="meter purple content" style="width: 60%; border: 5px solid #424242;">
+
+                            <span style="width: 50%; text-align: center;"><span></span>50%</span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>Shaders: </h2>
+                        </div>
+                        
+                        <div class="meter red content" style="width: 60%; border: 5px solid #424242;">
+
+                            <span style="width: 35%; text-align: center;"><span></span>35%</span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                        <div id="SkillProgressTitle">
+                            <h2>UI: </h2>
+                        </div>
+                        
+                        <div class="meter turquoise content" style="width: 60%; border: 5px solid #424242;">
+
+                            <span style="width: 75%; text-align: center;"><span></span>75%</span>
+                        </div>
+                        <div class="flexEmpty" style="flex-grow: 1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="group3" class="parallax__group"> 
+            <div class="parallax__layer parallax__layer--base">
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet1" class="content" style="flex-grow: 2">
+                        <h1>Design Philosophy</h1>
+                        <p>This is filler text to be filled in later</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum urna arcu, dignissim a dui vel, blandit cursus sem. Nulla nec lorem pellentesque, porttitor arcu eu, volutpat quam. Sed non diam aliquam nisi condimentum porttitor in vitae neque. Morbi tellus turpis, tincidunt a tristique in, elementum vitae tellus. Nunc et vehicula odio. Morbi nisl mauris, vulputate in ipsum a, placerat tristique quam. Donec turpis dui, iaculis et fringilla eu, tincidunt in dolor. Mauris molestie porta turpis. Praesent nisi metus, dictum in libero eget, interdum consectetur felis. Pellentesque suscipit nec quam quis sollicitudin. Nulla commodo aliquam elit quis ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br>
+                        </p>
+                        <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                        <p>
+                            Suspendisse quis orci suscipit, vestibulum erat in, condimentum purus. Morbi faucibus nunc at odio feugiat, eget laoreet nulla sodales. Donec auctor, tortor a lobortis dictum, dolor nulla efficitur justo, faucibus tincidunt risus purus quis neque. Morbi ornare mauris vel lacus consequat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas egestas faucibus massa vel tempor. Curabitur vel maximus magna. Vivamus eu diam ligula. Aliquam ornare elit et diam ornare sollicitudin. In porta augue purus, quis volutpat risus vulputate in. Cras tincidunt arcu non leo hendrerit iaculis. Nam at nibh eu libero posuere hendrerit. Aliquam accumsan nisi neque, vel cursus diam mollis nec. Phasellus pretium erat at mi laoreet volutpat.<br> </p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 2"></div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 2"></div>
+                    <div id="SkillSet1" class="content" style="flex-grow: 2">
+                        <h1>What Drives Me</h1>
+                        <p>This is filler text to be filled in later</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum urna arcu, dignissim a dui vel, blandit cursus sem. Nulla nec lorem pellentesque, porttitor arcu eu, volutpat quam. Sed non diam aliquam nisi condimentum porttitor in vitae neque. Morbi tellus turpis, tincidunt a tristique in, elementum vitae tellus. Nunc et vehicula odio. Morbi nisl mauris, vulputate in ipsum a, placerat tristique quam. Donec turpis dui, iaculis et fringilla eu, tincidunt in dolor. Mauris molestie porta turpis. Praesent nisi metus, dictum in libero eget, interdum consectetur felis. Pellentesque suscipit nec quam quis sollicitudin. Nulla commodo aliquam elit quis ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br>
+
+                            Suspendisse quis orci suscipit, vestibulum erat in, condimentum purus. Morbi faucibus nunc at odio feugiat, eget laoreet nulla sodales. Donec auctor, tortor a lobortis dictum, dolor nulla efficitur justo, faucibus tincidunt risus purus quis neque. Morbi ornare mauris vel lacus consequat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas egestas faucibus massa vel tempor. Curabitur vel maximus magna. Vivamus eu diam ligula. Aliquam ornare elit et diam ornare sollicitudin. In porta augue purus, quis volutpat risus vulputate in. Cras tincidunt arcu non leo hendrerit iaculis. Nam at nibh eu libero posuere hendrerit. Aliquam accumsan nisi neque, vel cursus diam mollis nec. Phasellus pretium erat at mi laoreet volutpat.<br> 
+                        </p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+                
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet1" class="content" style="flex-grow: 2">
+                        <h1>Journey to Computer Science</h1>
+                        <p>This is filler text to be filled in later</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum urna arcu, dignissim a dui vel, blandit cursus sem. Nulla nec lorem pellentesque, porttitor arcu eu, volutpat quam. Sed non diam aliquam nisi condimentum porttitor in vitae neque. Morbi tellus turpis, tincidunt a tristique in, elementum vitae tellus. Nunc et vehicula odio. Morbi nisl mauris, vulputate in ipsum a, placerat tristique quam. Donec turpis dui, iaculis et fringilla eu, tincidunt in dolor. Mauris molestie porta turpis. Praesent nisi metus, dictum in libero eget, interdum consectetur felis. Pellentesque suscipit nec quam quis sollicitudin. Nulla commodo aliquam elit quis ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br>
+
+                            Suspendisse quis orci suscipit, vestibulum erat in, condimentum purus. Morbi faucibus nunc at odio feugiat, eget laoreet nulla sodales. Donec auctor, tortor a lobortis dictum, dolor nulla efficitur justo, faucibus tincidunt risus purus quis neque. Morbi ornare mauris vel lacus consequat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas egestas faucibus massa vel tempor. Curabitur vel maximus magna. Vivamus eu diam ligula. Aliquam ornare elit et diam ornare sollicitudin. In porta augue purus, quis volutpat risus vulputate in. Cras tincidunt arcu non leo hendrerit iaculis. Nam at nibh eu libero posuere hendrerit. Aliquam accumsan nisi neque, vel cursus diam mollis nec. Phasellus pretium erat at mi laoreet volutpat.<br> 
+                        </p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 2"></div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet2" class="content" style="flex-grow: 2">
+                        <h1>Awards</h1>
+                        <p>This is filler text for my greatest achievements</p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet2" class="content" style="flex-grow: 2">
+                        <h1>Kind Words From Kind People</h1>
+                        <p>This is filler text for people who have said great things about me</p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet2" class="content" style="flex-grow: 2">
+                        <h1>What I'm Playing Right Now</h1>
+                        <p>This is filler text for a list of games i play</p>
+                        <div class="wrapper">
+                            <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                            <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                            <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                            <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                            <img class="contentImg" src="Assets/img1.jpg" style="width:200px; height: 200px; margin: auto;">
+                        </div>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+
+            </div>
+            
+            <div class="parallax__layer parallax__layer--deep bannerBG">
+                <img src="Assets/img4.png" style="height: 120%">
+            </div>
+        </div>
+
+        <div class="parallax__group"></div>
+
+        <!-- <div id="group5" class="parallax__group">
+            <div class="parallax__layer parallax__layer--back bannerBG">
+                <img src="Assets/img2.jpg">
+            </div>
+            <div class="parallax__layer parallax__layer--base">
+                
+
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet2" class="content" style="flex-grow: 2">
+                        <h1>Experience 4</h1>
+                        <p>This is filler text for my skills</p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+                
+                <div class="wrapper">
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                    <div id="SkillSet2" class="content" style="flex-grow: 2">
+                        <h1>Experience 5</h1>
+                        <p>This is filler text for my skills</p>
+                    </div>
+                    <div class="flexEmpty" style="flex-grow: 1"></div>
+                </div>
+            </div>
+        </div>  -->
+    </div>   
+
+    
         <script async="" src="A%20grouped%20pure%20CSS%20parallax%20demo%20by%20Keith%20Clark_files/analytics.js"></script><script>
     var debugInput = document.querySelector("input");
     function updateDebugState() {
