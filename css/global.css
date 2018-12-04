@@ -17,6 +17,11 @@ h2 {
 	text-align: center;
 	margin: 0;
 }
+
+h3 {
+	font-size: 30px;
+	text-decoration: underline solid white;
+}
  
 p {
 	text-align: center;
@@ -27,6 +32,11 @@ p {
 	display: flex;
 }
 
+.wrapperVertical {
+	display: flex;
+	flex-direction: column;
+}
+
 .flexEmpty {
 	display: flex;
 	flex-grow: 2;
@@ -35,4 +45,14 @@ p {
 .contentImg {
 	display: block; 
 	border: 5px solid black;
+}
+
+.navigation {
+	z-index: 999;
+	width: 50px;
+	/*background-color: black;*/
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
 }

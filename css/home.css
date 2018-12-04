@@ -22,13 +22,14 @@
 }
 
 .header {
-	background-image: url("../Assets/MainBG_back.png");
+	background-image: url("../Assets/header_BG.png");
 	background-position: center;
 	height: 130%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	background-color: #840909;
+	background-color: #000;
+	/*background-color: #840909;*/
 }
 
 .footer {
@@ -51,7 +52,7 @@
 .spaceFiller {
 	background-position: center;
 	height: 100%;
-	background-color: #840909;
+	background-color: #000;
 	flex-grow: 2;
 }
 
@@ -84,14 +85,4 @@
 	text-align: center;
 	color: white;
 	font-size: 
-}
-
-.navigation {
-	z-index: 999;
-	width: 50px;
-	background-color: black;
-	height: 100%;
-	position: fixed;
-	display: flex;
-	flex-direction: column;
 }
